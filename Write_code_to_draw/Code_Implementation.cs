@@ -15,9 +15,9 @@ namespace Write_code_to_draw
         Graphics graphics;
         int Default_initial_positionx = 0;
         int Default_initial_positiony = 0;
-        SolidBrush Default_Brush = new SolidBrush(Color.White);
-        Pen Default_Pen = new Pen(Color.White);
-        bool fill = false;
+        public static SolidBrush Default_Brush = new SolidBrush(Color.White);
+        public static Pen Default_Pen = new Pen(Color.White);
+        public static bool fill = false;
 
         public Code_Implementation(string firstname , int[] parameters, Graphics gr)
         {
@@ -32,8 +32,16 @@ namespace Write_code_to_draw
             else if(firstname == "circle")
             {
                 Shapes sh = shape_type.GetShapes("circle");
-                sh.GetValue(parameters,fill);
-                sh.Draw(graphics, Default_initial_positionx, Default_initial_positiony);
+                if(fill)
+                {
+                    sh.GetValue(parameters,Default_Brush);
+
+                }
+                else
+                {
+                    sh.GetValue(parameters, Default_Pen);
+                }
+                sh.Draw(graphics, Default_initial_positionx, Default_initial_positiony,fill);
             }
             else
             {

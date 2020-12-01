@@ -9,9 +9,12 @@ namespace Write_code_to_draw
 {
     public interface Shapes
     {
-        void Draw(Graphics G, int x, int y);
+        void Draw(Graphics G, int x, int y,bool fill);
 
-        void GetValue(int[] parameters);
+        void GetValue(int[] parameters,Pen Default_Pen);
+
+        void GetValue(int[] parameters, Brush Default_Brush);
+
 
     }
 }
