@@ -49,6 +49,7 @@
     <Compile Include="Circle.cs" />
     <Compile Include="Code_Implementation.cs" />
     <Compile Include="PencolorSwitcher.cs" />
+    <Compile Include="Rectangle.cs" />
     <Compile Include="Shapes.cs" />
     <Compile Include="Shape_decider.cs" />
     <Compile Include="Triangle.cs" />

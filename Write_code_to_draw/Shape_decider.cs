@@ -18,6 +18,10 @@ namespace Write_code_to_draw
             {
                 return new Triangle();
             }
+            else if (shape_type == "rectangle")
+            {
+                return new Rectangle();
+            }
             return null;
         }
     }
