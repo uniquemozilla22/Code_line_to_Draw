@@ -49,18 +49,6 @@ namespace Write_code_to_draw
             string[] parameters_string = this.code[1].Split(',');
             int[] parameters_int = {0,0,0};
 
-            for(int i=0; i< parameters_string.Length; i++)
-            {
-                try
-                {
-                    parameters_int[i] = int.Parse(parameters_string[i]);
-                }
-                catch(Exception e)
-                {
-                    errors[0] = "**Please enter a valid parameter";
-                }
-
-            }
 
             if (parameters_string.Length <= 0 || parameters_string.Length>=3)
             {
@@ -68,7 +56,7 @@ namespace Write_code_to_draw
             }
             else
             {
-                Code_Implementation im = new Code_Implementation(firstname, parameters_int,this.graphic);
+                Code_Implementation im = new Code_Implementation(firstname, parameters_string,this.graphic);
                 this.errors = im.error_handling_code_implementation();
                 
             }

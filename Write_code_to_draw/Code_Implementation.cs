@@ -11,56 +11,87 @@ namespace Write_code_to_draw
     {
         string[] errors = { "", "" };
         string firstname;
-        int[] parameters;
         Graphics graphics;
+        string[] parameters;
         int Default_initial_positionx = 0;
         int Default_initial_positiony = 0;
         public static SolidBrush Default_Brush = new SolidBrush(Color.White);
         public static Pen Default_Pen = new Pen(Color.White);
         public static bool fill = false;
 
-        public Code_Implementation(string firstname , int[] parameters, Graphics gr)
+        public Code_Implementation(string firstname , string[] parameters_string, Graphics gr)
         {
             this.firstname = firstname;
-            this.parameters = parameters;
             this.graphics = gr;
+            this.parameters = parameters_string;
             Shape_decider shape_type = new Shape_decider();
-            if (parameters[2]==0 && (firstname == "moveto" || firstname == "drawto"))
+            if (firstname == "moveto" || firstname == "drawto")
             {
-                this.to_implementation();
+                        this.to_implementation();
             }
+
             else if(firstname == "circle")
             {
-                Shapes sh = shape_type.GetShapes("circle");
-                if(fill)
+                if(parameters_string.Length==1)
                 {
-                    sh.GetValue(parameters,Default_Brush);
 
+                    int[] parameters_int= { 0 };
+                    for (int i = 0; i < parameters_string.Length; i++)
+                    {
+                        parameters_int[i] = int.Parse(parameters_string[i]);
+
+                    }
+
+                    Shapes sh = shape_type.GetShapes("circle");
+                    if (fill)
+                    {
+                        sh.GetValue(parameters_int, Default_Brush);
+
+                    }
+                    else
+                    {
+                        sh.GetValue(parameters_int, Default_Pen);
+                    }
+                    sh.Draw(graphics, Default_initial_positionx, Default_initial_positiony, fill);
                 }
                 else
                 {
-                    sh.GetValue(parameters, Default_Pen);
+                    errors[0] = "**Pass only a Radius**";
                 }
-                sh.Draw(graphics, Default_initial_positionx, Default_initial_positiony,fill);
+
             }
+            
+            
             else
             {
                 this.errors[0] = "**Not a Valid Code**";
             }
 
         }
+
+        public void change_parameters_to_int(string[] parameters_string)
+        {
+
+           
+        }
         public void to_implementation()
         {
             if(firstname=="moveto")
             {
 
-                Default_initial_positionx = parameters[0];
-                Default_initial_positiony = parameters[1];
+                Default_initial_positionx = int.Parse(parameters[0]);
+                Default_initial_positiony = int.Parse(parameters[1]);
                 errors[0] = "**Initial position moved to ("+Default_initial_positionx+ ","+Default_initial_positiony+")**";
             }
             else if(firstname=="drawto")
             {
-                this.graphics.DrawLine(Default_Pen, Default_initial_positionx, Default_initial_positiony, parameters[0], parameters[1]);
+
+                int param1= int.Parse(parameters[0]);
+                int param2 = int.Parse(parameters[1]);
+
+                this.graphics.DrawLine(Default_Pen, Default_initial_positionx, Default_initial_positiony, param1,param2);
+                errors[0] = "**Line drawn to "+parameters[0]+","+parameters[1]+"**";
+
             }
         }
 
