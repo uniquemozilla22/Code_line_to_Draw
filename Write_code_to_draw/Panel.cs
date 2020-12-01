@@ -19,35 +19,57 @@ namespace Write_code_to_draw
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            g = this.pictureBox1.CreateGraphics();
-            Command_validator cv = new Command_validator(this.textBox1.Text,this.textBox2.Text);
-            string[] error = cv.error_command_handler();
-            label3.Text = error[0];
-            label16.Text = error[1];
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
         public void Clear()
         {
-            label3.Text = "";
-            label16.Text = "";
-            textBox1.Text = "";
-            textBox2.Text = "";
+            this.textBox1.Text = "";
+            this.textBox2.Text = "";
+            this.label3.Text = "";
+            this.label16.Text = "";
         }
         public void Reset()
         {
             this.Clear();
             pictureBox1.Refresh();
             g.ResetTransform();
-
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string comm = this.textBox2.Text.ToLower().Trim();
+            if(comm=="")
+            {
+                this.label16.Text = "**Feild is empty**";
+            }
+            else if (comm == "run")
+            {
+                Validation valid = new Validation(this.textBox1.Text, g);
+                string[] errors = valid.error_handling_validation();
+                this.label3.Text = errors[0];
+                this.label16.Text = errors[1];
+
+            }
+            else if (comm == "clear")
+            {
+                Clear();
+            }
+            else if (comm == "reset")
+            {
+                Reset();
+            }
+            else
+            {
+                label16.Text = "**Please enter a valid command**";
+            }
+            
+
+        }
+        
+        public void button2_Click(object sender, EventArgs e)
+        {
+
+            this.Clear();
+        }
+        
         private void label3_Click(object sender, EventArgs e)
         {
 

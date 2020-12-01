@@ -147,9 +147,8 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(96, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 21);
+            this.label3.Size = new System.Drawing.Size(0, 21);
             this.label3.TabIndex = 7;
-            this.label3.Text = "label3";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
@@ -354,9 +353,8 @@
             this.label16.ForeColor = System.Drawing.Color.Red;
             this.label16.Location = new System.Drawing.Point(414, 166);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 21);
+            this.label16.Size = new System.Drawing.Size(0, 21);
             this.label16.TabIndex = 21;
-            this.label16.Text = "label16";
             // 
             // Panel
             // 
