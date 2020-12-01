@@ -1,0 +1,10 @@
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\bin\Debug\Write_code_to_draw.exe.config
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\bin\Debug\Write_code_to_draw.exe
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\bin\Debug\Write_code_to_draw.pdb
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.csprojAssemblyReference.cache
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.Panel.resources
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.Properties.Resources.resources
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.csproj.GenerateResource.cache
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.csproj.CoreCompileInputs.cache
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.exe
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.pdb

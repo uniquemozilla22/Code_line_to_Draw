@@ -10,11 +10,36 @@ using System.Windows.Forms;
 
 namespace Write_code_to_draw
 {
-    public partial class Form1 : Form
+    public partial class Panel : Form
     {
-        public Form1()
+        public Panel()
         {
             InitializeComponent();
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
