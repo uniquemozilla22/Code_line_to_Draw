@@ -11,11 +11,11 @@ namespace Write_code_to_draw
     {
         string[] errors = { "", "" };
         string[] code = null;
-        Graphics g;
+        Graphics graphic;
 
         public Validation(string code,Graphics g)
         {
-            this.g = g;
+            this.graphic = g;
 
             if (code == "" )
             {
@@ -68,7 +68,7 @@ namespace Write_code_to_draw
             }
             else
             {
-                Code_Implementation im = new Code_Implementation(firstname, parameters_int,this.g);
+                Code_Implementation im = new Code_Implementation(firstname, parameters_int,this.graphic);
                 this.errors = im.error_handling_code_implementation();
                 
             }

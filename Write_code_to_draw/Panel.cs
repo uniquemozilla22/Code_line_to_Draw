@@ -12,11 +12,13 @@ namespace Write_code_to_draw
 {
     public partial class Panel : Form
     {
-        public static Graphics g;
+        public static Graphics graphic;
 
         public Panel()
         {
             InitializeComponent();
+            graphic = this.pictureBox1.CreateGraphics();
+
         }
 
         public void Clear()
@@ -30,7 +32,7 @@ namespace Write_code_to_draw
         {
             this.Clear();
             pictureBox1.Refresh();
-            g.ResetTransform();
+            graphic.ResetTransform();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace Write_code_to_draw
             }
             else if (comm == "run")
             {
-                Validation valid = new Validation(this.textBox1.Text, g);
+                Validation valid = new Validation(this.textBox1.Text, graphic);
                 string[] errors = valid.error_handling_validation();
                 this.label3.Text = errors[0];
                 this.label16.Text = errors[1];

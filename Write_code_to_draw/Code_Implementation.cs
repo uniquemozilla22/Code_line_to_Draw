@@ -15,17 +15,25 @@ namespace Write_code_to_draw
         Graphics graphics;
         int Default_initial_positionx = 0;
         int Default_initial_positiony = 0;
-        Brush Default_Brush = new SolidBrush(Color.White);
+        SolidBrush Default_Brush = new SolidBrush(Color.White);
         Pen Default_Pen = new Pen(Color.White);
+        bool fill = false;
 
         public Code_Implementation(string firstname , int[] parameters, Graphics gr)
         {
             this.firstname = firstname;
             this.parameters = parameters;
             this.graphics = gr;
+            Shape_decider shape_type = new Shape_decider();
             if (parameters[2]==0 && (firstname == "moveto" || firstname == "drawto"))
             {
                 this.to_implementation();
+            }
+            else if(firstname == "circle")
+            {
+                Shapes sh = shape_type.GetShapes("circle");
+                sh.GetValue(parameters,fill);
+                sh.Draw(graphics, Default_initial_positionx, Default_initial_positiony);
             }
             else
             {
@@ -44,7 +52,7 @@ namespace Write_code_to_draw
             }
             else if(firstname=="drawto")
             {
-
+                this.graphics.DrawLine(Default_Pen, Default_initial_positionx, Default_initial_positiony, parameters[0], parameters[1]);
             }
         }
 
