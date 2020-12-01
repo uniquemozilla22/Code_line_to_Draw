@@ -22,22 +22,31 @@ namespace Write_code_to_draw
 
                 this.errors[0] = "**Feild is empty**";
             }
-            else
+            else 
             {
                 code = code.ToLower().Trim();
                 this.code = code.Split(' ');
-                for(int i=0; i<this.code.Length;i++)
+                if(!(this.code.Length==1))
                 {
-                    this.code[i] = this.code[i].Trim();
+                    for (int i = 0; i < this.code.Length; i++)
+                    {
+                        this.code[i] = this.code[i].Trim();
+                    }
+                    Parameters_Implementation();
                 }
-                Parameters_Implementation();
+                else
+                {
+                    this.errors[0] = "**Not a valid syntax**";
+                }
+                
             }
         }
 
         public void Parameters_Implementation()
         {
-            string firstname = this.code[1];
-            string[] parameters_string = this.code[2].Split(',');
+            string firstname = this.code[0];
+
+            string[] parameters_string = this.code[1].Split(',');
             int[] parameters_int = {0,0,0};
 
             for(int i=0; i< parameters_string.Length; i++)

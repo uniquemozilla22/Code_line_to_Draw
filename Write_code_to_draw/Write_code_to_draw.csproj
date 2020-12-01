@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code_Implementation.cs" />
     <Compile Include="Validation.cs" />
     <Compile Include="Panel.cs">
       <SubType>Form</SubType>
