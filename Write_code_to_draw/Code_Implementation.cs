@@ -60,8 +60,38 @@ namespace Write_code_to_draw
                 }
 
             }
-            
-            
+            else if (firstname == "triangle")
+            {
+                if (parameters_string.Length == 3)
+                {
+
+                    int[] parameters_int = { 0 ,0,0};
+                    for (int i = 0; i < parameters_string.Length; i++)
+                    {
+                        parameters_int[i] = int.Parse(parameters_string[i]);
+
+                    }
+
+                    Shapes sh = shape_type.GetShapes("triangle");
+                    if (fill)
+                    {
+                        sh.GetValue(parameters_int, Default_Brush);
+
+                    }
+                    else
+                    {
+                        sh.GetValue(parameters_int, Default_Pen);
+                    }
+                    sh.Draw(graphics, Default_initial_positionx, Default_initial_positiony, fill);
+                }
+                else
+                {
+                    errors[0] = "**Pass legnths for each side**";
+                }
+
+            }
+
+
             else
             {
                 this.errors[0] = "**Not a Valid Code**";

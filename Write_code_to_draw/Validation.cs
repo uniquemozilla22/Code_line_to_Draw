@@ -47,10 +47,9 @@ namespace Write_code_to_draw
             string firstname = this.code[0];
 
             string[] parameters_string = this.code[1].Split(',');
-            int[] parameters_int = {0,0,0};
 
 
-            if (parameters_string.Length <= 0 || parameters_string.Length>=3)
+            if (parameters_string.Length <= 0 || parameters_string.Length>=4)
             {
                 this.errors[0] = "**Parameters not passed correctly**";
             }

@@ -14,6 +14,10 @@ namespace Write_code_to_draw
             {
                 return new Circle();
             }
+            else if(shape_type == "triangle")
+            {
+                return new Triangle();
+            }
             return null;
         }
     }
