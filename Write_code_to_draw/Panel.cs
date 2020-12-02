@@ -57,11 +57,21 @@ namespace Write_code_to_draw
 
         /// <summary>
         /// Function that is called whenever the button1 in the form is clicked.
-        /// executes the programme for further operations
         /// </summary>
         /// <param name="sender"></param> 
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
+        {
+
+            this.Command_validation();
+
+        }
+
+        /// <summary>
+        /// executes the programme for further operations when called
+        /// </summary>
+
+        public void Command_validation()
         {
             string comm = this.textBox2.Text.ToLower().Trim();
             if (comm == "")
@@ -88,8 +98,6 @@ namespace Write_code_to_draw
             {
                 label16.Text = "**Please enter a valid command**";
             }
-
-
         }
 
         /// <summary>
@@ -110,7 +118,7 @@ namespace Write_code_to_draw
             if (save.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter write = new StreamWriter(File.Create(save.FileName));
-                write.WriteLine(textBox1.Text +"/run ");
+                write.WriteLine(textBox1.Text +"|run");
                 write.Close();
                 MessageBox.Show("File Saved Successfully");
             }
@@ -137,7 +145,13 @@ namespace Write_code_to_draw
                     {
                         using (myStream)
                         {
-                            
+
+                            //displays the text inside the file on TextBox named as txtInput
+                            string fileContent = File.ReadAllText(openFileDialog1.FileName);
+                            string[] content_splitting = fileContent.Split('|');
+                            this.textBox1.Text = content_splitting[0];
+                            this.textBox2.Text = content_splitting[1];
+                            this.Command_validation();
                         }
                     }
                 }
@@ -150,6 +164,17 @@ namespace Write_code_to_draw
                 textBox1.Text = File.ReadAllText(openFileDialog1.FileName);
 
             }
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help h = new Help();
+            h.ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -8,3 +8,4 @@ C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Wri
 C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.csproj.CoreCompileInputs.cache
 C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.exe
 C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.pdb
+C:\Users\unique\source\repos\Write_code_to_draw\Write_code_to_draw\obj\Debug\Write_code_to_draw.Help.resources
