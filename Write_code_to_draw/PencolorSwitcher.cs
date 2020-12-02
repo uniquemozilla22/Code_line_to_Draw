@@ -7,10 +7,18 @@ using System.Drawing;
 
 namespace Write_code_to_draw
 {
+
+    /// <summary>
+    /// switches the pen or brush to be used in the application
+    /// </summary>
     public class PencolorSwitcher
     {
         string[] error = { "", "" };
 
+        /// <summary>
+        /// the class takes the color as a string and converts the color of the pen or brush according to the user command
+        /// </summary>
+        /// <param name="color"></param> string name of the color
         public PencolorSwitcher(string color)
         {
 
@@ -109,6 +117,11 @@ namespace Write_code_to_draw
 
             }
         }
+
+        /// <summary>
+        /// Errors thown from the class is handled in an array
+        /// </summary>
+        /// <returns></returns> the string of array that contains the error string in the class
         public string[] error_pencolorSwitcher()
         {
             return this.error;
