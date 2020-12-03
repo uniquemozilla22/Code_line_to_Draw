@@ -80,7 +80,7 @@ namespace Write_code_to_draw
             }
             else if (comm == "run")
             {
-                Validation valid = new Validation(this.textBox1.Text, graphic);
+                Validation valid = new Validation(this.textBox1.Text);
                 string[] errors = valid.error_handling_validation();
                 this.label3.Text = errors[0];
                 this.label16.Text = errors[1];

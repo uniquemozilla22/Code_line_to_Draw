@@ -14,7 +14,6 @@ namespace Write_code_to_draw
     {
         string[] errors = { "", "" };
         string[] code = null;
-        Graphics graphic;
 
         /// <summary>
         /// takes the input and executes the graphic materials.
@@ -22,9 +21,8 @@ namespace Write_code_to_draw
         /// </summary>
         /// <param name="code"></param> the code given by the user for the execution of the programme
         /// <param name="g"></param> Graphics object to draw the shapes and implement the application in the Picturebox
-        public Validation(string code,Graphics g)
+        public Validation(string code)
         {
-            this.graphic = g;
 
             if (code == "" )
             {
@@ -66,7 +64,7 @@ namespace Write_code_to_draw
             }
             else
             {
-                Code_Implementation im = new Code_Implementation(firstname, parameters_string,this.graphic);
+                Code_Implementation im = new Code_Implementation(firstname, parameters_string);
                 this.errors = im.error_handling_code_implementation();
                 
             }
