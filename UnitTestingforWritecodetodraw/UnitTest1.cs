@@ -7,6 +7,7 @@ using System.IO;
 namespace Write_code_to_draw.UnitTests
 {
     [TestClass]
+    
     public class UnitTest1a
     {
         [TestMethod]
@@ -35,9 +36,7 @@ namespace Write_code_to_draw.UnitTests
             string[] array_output = cx.error_handling_validation() ;
 
             string expected_output =  "**Parameters not passed correctly**";
-            Assert.AreEqual(expected_output, array_output[0]);
-
-          
+            Assert.AreEqual(expected_output, array_output[0]);        
 
 
         }

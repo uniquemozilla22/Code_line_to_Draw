@@ -118,7 +118,7 @@ namespace Write_code_to_draw
             if (save.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter write = new StreamWriter(File.Create(save.FileName));
-                write.WriteLine(textBox1.Text +"|run");
+                write.WriteLine(textBox1.Text);
                 write.Close();
                 MessageBox.Show("File Saved Successfully");
             }
@@ -148,9 +148,7 @@ namespace Write_code_to_draw
 
                             //displays the text inside the file on TextBox named as txtInput
                             string fileContent = File.ReadAllText(openFileDialog1.FileName);
-                            string[] content_splitting = fileContent.Split('|');
-                            this.textBox1.Text = content_splitting[0];
-                            this.textBox2.Text = content_splitting[1];
+                            
                             this.Command_validation();
                         }
                     }

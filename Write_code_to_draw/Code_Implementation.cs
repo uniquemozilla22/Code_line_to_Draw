@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Write_code_to_draw
 {
@@ -17,8 +18,8 @@ namespace Write_code_to_draw
         string firstname;
         Graphics graphics = Panel.graphic;
         string[] parameters;
-        int Default_initial_positionx = 0;
-        int Default_initial_positiony = 0;
+        public static int Default_initial_positionx = 0;
+        public static int Default_initial_positiony = 0;
         public static SolidBrush Default_Brush = new SolidBrush(Color.White);
         public static Pen Default_Pen = new Pen(Color.White);
         public static bool fill = false;
@@ -156,7 +157,7 @@ namespace Write_code_to_draw
             {
                 sh.GetValue(parameters_int, Default_Pen);
             }
-            sh.Draw(graphics, Default_initial_positionx, Default_initial_positiony, fill);
+            sh.Draw(graphics, Default_initial_positionx,Default_initial_positiony, fill);
 
         }
 
