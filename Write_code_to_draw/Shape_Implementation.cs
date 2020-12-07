@@ -18,8 +18,8 @@ namespace Write_code_to_draw
         string firstname;
         Graphics graphics = Panel.graphic;
         string[] parameters;
-        public static int Default_initial_positionx = 0;
-        public static int Default_initial_positiony = 0;
+        public static float Default_initial_positionx = 0;
+        public static float Default_initial_positiony = 0;
         public static SolidBrush Default_Brush = new SolidBrush(Color.White);
         public static Pen Default_Pen = new Pen(Color.White);
         public static bool fill = false;
@@ -188,16 +188,97 @@ namespace Write_code_to_draw
         {
             if(firstname=="moveto")
             {
+                if (Data_storing.List_of_varaiables.Contains(parameters[0]))
+                {
+                    int index = Data_storing.List_of_varaiables.IndexOf(parameters[0]);
+                    Default_initial_positionx = (float)Data_storing.Value_of_varaiables[index];
 
-                Default_initial_positionx = int.Parse(parameters[0]);
-                Default_initial_positiony = int.Parse(parameters[1]);
-                errors[0] = "**Initial position moved to ("+Default_initial_positionx+ ","+Default_initial_positiony+")**";
+                }
+                else
+                {
+                    try
+                    {
+
+                        Default_initial_positionx = int.Parse(parameters[0]);
+
+                    }
+                    catch (FormatException fe)
+                    {
+                        this.errors[0] = "Please pass some parameters to the command";
+
+
+                    }
+                }
+                if (Data_storing.List_of_varaiables.Contains(parameters[1]))
+                {
+                    int index = Data_storing.List_of_varaiables.IndexOf(parameters[1]);
+                    Default_initial_positiony= (float)Data_storing.Value_of_varaiables[index];
+
+                }
+                else
+                {
+                    try
+                    {
+
+                        Default_initial_positiony = int.Parse(parameters[1]);
+
+                    }
+                    catch (FormatException fe)
+                    {
+                        this.errors[0] = "Please pass some parameters to the command";
+
+
+                    }
+                }
+                    errors[0] = "**Initial position moved to (" + Default_initial_positionx + "," + Default_initial_positiony + ")**";
             }
             else if(firstname=="drawto")
             {
+                float param1=0,param2=0;
 
-                int param1= int.Parse(parameters[0]);
-                int param2 = int.Parse(parameters[1]);
+                if (Data_storing.List_of_varaiables.Contains(parameters[0]))
+                {
+                    int index = Data_storing.List_of_varaiables.IndexOf(parameters[0]);
+                   param1 = (float)Data_storing.Value_of_varaiables[index];
+
+                }
+                else
+                {
+                    try
+                    {
+
+                        param1 = float.Parse(parameters[0]);
+
+                    }
+                    catch (FormatException fe)
+                    {
+                        this.errors[0] = "Please pass some parameters to the command";
+
+
+                    }
+                }
+                if (Data_storing.List_of_varaiables.Contains(parameters[1]))
+                {
+                    int index = Data_storing.List_of_varaiables.IndexOf(parameters[1]);
+                    param2 = (float)Data_storing.Value_of_varaiables[index];
+
+                }
+                else
+                {
+                    try
+                    {
+
+                        param2 = float.Parse(parameters[1]);
+
+                    }
+                    catch (FormatException fe)
+                    {
+                        this.errors[0] = "Please pass some parameters to the command";
+
+
+                    }
+                }
+
 
                 this.graphics.DrawLine(Default_Pen, Default_initial_positionx, Default_initial_positiony, param1,param2);
                 errors[0] = "**Line drawn to "+parameters[0]+","+parameters[1]+"**";

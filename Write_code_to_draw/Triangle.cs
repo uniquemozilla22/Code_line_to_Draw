@@ -58,11 +58,12 @@ namespace Write_code_to_draw
         /// <param name="x"></param> initial x point in the picturebox
         /// <param name="y"></param> initial y point in the picturebox
         /// <param name="fill"></param> fill on or off in the application
-        public void Draw(Graphics G, int x, int y, bool fill)
+        public void Draw(Graphics G, float x, float y, bool fill)
         {
-
-            Point p1 = new Point(x, y);
-            Point p2 = new Point(side1, y);
+            int initial_positionx = (int)x;
+            int initial_positiony = (int)y;
+            Point p1 = new Point(initial_positionx, initial_positiony);
+            Point p2 = new Point(side1, initial_positiony);
             Point p3 = new Point(side2, side3);
 
             Point[] points = { p1, p2, p3 };

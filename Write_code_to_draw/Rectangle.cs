@@ -49,7 +49,7 @@ namespace Write_code_to_draw
         /// <param name="x"></param> initial x point in the picturebox
         /// <param name="y"></param> initial y point in the picturebox
         /// <param name="fill"></param> fill on or off in the application
-        public void Draw(Graphics G, int x, int y, bool fill)
+        public void Draw(Graphics G, float x, float y, bool fill)
         {
             if (fill)
             {
