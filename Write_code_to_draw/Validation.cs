@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
+
 
 namespace Write_code_to_draw
 {
@@ -25,18 +27,34 @@ namespace Write_code_to_draw
         public Validation(string code)
         {
 
-            if (code == "" )
+            if (code == "")
             {
 
                 this.errors[0] = "**Feild is empty**";
             }
-            else 
+            else
             {
+                if(code.Contains('\n')==true)
+                {
+                    string[] multiline = code.Split('\n');
+                    foreach(string line in multiline)
+                    {
 
-                code = code.ToLower().Trim();
-                
+                        code = line.ToLower().Trim();
+
+                        this.code = code.Split(' ');
+                        Parameters_Implementation(code);
+                    }
+                }
+                else
+                {
+
+                    code = code.ToLower().Trim();
+
                     this.code = code.Split(' ');
-                Parameters_Implementation(code);              
+                    Parameters_Implementation(code);
+                }
+                              
 
 
             }
@@ -48,7 +66,7 @@ namespace Write_code_to_draw
         {       
            
             
-            if (code.Contains('=') || code.Contains('+') || code.Contains('-') || code.Contains('/') || code.Contains('*'))
+            if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*'))
             {
                 Variables vr = new Variables(code);
                 this.errors = vr.error_handling_variables();

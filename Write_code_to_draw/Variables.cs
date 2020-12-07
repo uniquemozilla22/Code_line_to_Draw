@@ -35,6 +35,10 @@ namespace Write_code_to_draw
             {
                 this.remaining_to_the_variables();
             }
+            else if (code.Contains("/"))
+            {
+                this.dividing_to_the_variables();
+            }
 
         }
 
