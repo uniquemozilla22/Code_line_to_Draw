@@ -15,6 +15,7 @@ namespace Write_code_to_draw
         string[] errors = { "", "" };
         string[] code = null;
 
+
         /// <summary>
         /// takes the input and executes the graphic materials.
         /// 
@@ -47,7 +48,7 @@ namespace Write_code_to_draw
         {       
            
             
-            if (code.Contains('=')|| code.Contains('+'))
+            if (code.Contains('=') || code.Contains('+') || code.Contains('-') || code.Contains('/') || code.Contains('*'))
             {
                 Variables vr = new Variables(code);
                 this.errors = vr.error_handling_variables();
