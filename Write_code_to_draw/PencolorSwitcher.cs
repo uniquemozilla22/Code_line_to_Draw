@@ -24,42 +24,42 @@ namespace Write_code_to_draw
 
             error[0] = "**Pen color set : " + color + "**";
 
-            if (!Code_Implementation.fill)
+            if (!Shape_Implementation.fill)
             {
                 switch (color)
                 {
                     case "green":
                         {
 
-                            Code_Implementation.Default_Pen = new Pen(Color.Green);
+                            Shape_Implementation.Default_Pen = new Pen(Color.Green);
                             break;
                         }
 
                     case "blue":
                         {
-                            Code_Implementation.Default_Pen = new Pen(Color.Blue);
+                            Shape_Implementation.Default_Pen = new Pen(Color.Blue);
                             break;
                         }
                     case "brown":
                         {
-                            Code_Implementation.Default_Pen = new Pen(Color.Brown);
+                            Shape_Implementation.Default_Pen = new Pen(Color.Brown);
                             break;
                         }
 
                     case "yellow":
                         {
-                            Code_Implementation.Default_Pen = new Pen(Color.Yellow);
+                            Shape_Implementation.Default_Pen = new Pen(Color.Yellow);
                             break;
                         }
 
                     case "white":
                         {
-                            Code_Implementation.Default_Pen = new Pen(Color.White);
+                            Shape_Implementation.Default_Pen = new Pen(Color.White);
                             break;
                         }
                     case "red":
                         {
-                            Code_Implementation.Default_Pen = new Pen(Color.Red);
+                            Shape_Implementation.Default_Pen = new Pen(Color.Red);
                             break;
                         }
                     default:
@@ -77,35 +77,35 @@ namespace Write_code_to_draw
                 {
                     case "green":
                         {
-                            Code_Implementation.Default_Brush = new SolidBrush(Color.Green);
+                            Shape_Implementation.Default_Brush = new SolidBrush(Color.Green);
                             break;
                         }
 
                     case "blue":
                         {
-                            Code_Implementation.Default_Brush = new SolidBrush(Color.Blue);
+                            Shape_Implementation.Default_Brush = new SolidBrush(Color.Blue);
                             break;
                         }
                     case "brown":
                         {
-                            Code_Implementation.Default_Brush = new SolidBrush(Color.Brown);
+                            Shape_Implementation.Default_Brush = new SolidBrush(Color.Brown);
                             break;
                         }
 
                     case "yellow":
                         {
-                            Code_Implementation.Default_Brush = new SolidBrush(Color.Yellow);
+                            Shape_Implementation.Default_Brush = new SolidBrush(Color.Yellow);
                             break;
                         }
 
                     case "white":
                         {
-                            Code_Implementation.Default_Brush = new SolidBrush(Color.White);
+                            Shape_Implementation.Default_Brush = new SolidBrush(Color.White);
                             break;
                         }
                     case "red":
                         {
-                            Code_Implementation.Default_Brush = new SolidBrush(Color.Red);
+                            Shape_Implementation.Default_Brush = new SolidBrush(Color.Red);
                             break;
                         }
                     default:

@@ -39,7 +39,7 @@ namespace Write_code_to_draw
                     {
                         this.code[i] = this.code[i].Trim();
                     }
-                    Parameters_Implementation();
+                    Parameters_Implementation(code);
                 }
                 else
                 {
@@ -51,7 +51,7 @@ namespace Write_code_to_draw
         /// <summary>
         /// Method that is used in the class for executing the parameters and passing them to implement in the code.
         /// </summary>
-        public void Parameters_Implementation()
+        public void Parameters_Implementation(string code)
         {
             string firstname = this.code[0];
 
@@ -62,9 +62,14 @@ namespace Write_code_to_draw
             {
                 this.errors[0] = "**Parameters not passed correctly**";
             }
+            else if (code.Contains('='))
+            {
+                Variables vr = new Variables(code);
+                this.errors = vr.error_handling_variables();
+            }
             else
             {
-                Code_Implementation im = new Code_Implementation(firstname, parameters_string);
+                Shape_Implementation im = new Shape_Implementation(firstname, parameters_string);
                 this.errors = im.error_handling_code_implementation();
                 
             }

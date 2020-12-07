@@ -12,7 +12,7 @@ namespace Write_code_to_draw
     /// <summary>
     /// This class is for implementing the user given input and runs the given data in the application
     /// </summary>
-    public class Code_Implementation
+    public class Shape_Implementation
     {
         string[] errors = { "", "" };
         string firstname;
@@ -30,7 +30,7 @@ namespace Write_code_to_draw
         /// <param name="firstname"></param> first name of the code that is to be implemented
         /// <param name="parameters_string"></param> array of string that contains the input of parametes that has been given by the user to compile.
         /// <param name="gr"></param> graphics for the picturebox that the application draws the shapes in.
-        public Code_Implementation(string firstname , string[] parameters_string)
+        public Shape_Implementation(string firstname , string[] parameters_string)
         {
             this.firstname = firstname;
            
