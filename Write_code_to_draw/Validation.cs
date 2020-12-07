@@ -31,46 +31,59 @@ namespace Write_code_to_draw
             }
             else 
             {
+
                 code = code.ToLower().Trim();
-                this.code = code.Split(' ');
-                if(!(this.code.Length==1))
-                {
-                    for (int i = 0; i < this.code.Length; i++)
-                    {
-                        this.code[i] = this.code[i].Trim();
-                    }
-                    Parameters_Implementation(code);
-                }
-                else
-                {
-                    this.errors[0] = "**Not a valid syntax**";
-                }
                 
+                    this.code = code.Split(' ');
+                Parameters_Implementation(code);              
+
+
             }
         }
         /// <summary>
         /// Method that is used in the class for executing the parameters and passing them to implement in the code.
         /// </summary>
         public void Parameters_Implementation(string code)
-        {
-            string firstname = this.code[0];
-
-            string[] parameters_string = this.code[1].Split(',');
-
-
-            if (parameters_string.Length <= 0 || parameters_string.Length>=4)
-            {
-                this.errors[0] = "**Parameters not passed correctly**";
-            }
-            else if (code.Contains('='))
+        {       
+           
+            
+            if (code.Contains('=')|| code.Contains('+'))
             {
                 Variables vr = new Variables(code);
                 this.errors = vr.error_handling_variables();
             }
             else
             {
-                Shape_Implementation im = new Shape_Implementation(firstname, parameters_string);
-                this.errors = im.error_handling_code_implementation();
+                if(this.code.Length!=1)
+                {
+                    string firstname = this.code[0];
+
+                    string[] parameters_string = this.code[1].Split(',');
+
+                    if (parameters_string.Length <= 0 || parameters_string.Length >= 4)
+                    {
+                        this.errors[0] = "**Parameters not passed correctly**";
+                    }
+                    else if (!(this.code.Length == 1))
+                    {
+                        for (int i = 0; i < this.code.Length; i++)
+                        {
+                            this.code[i] = this.code[i].Trim();
+                        }
+
+                        Shape_Implementation im = new Shape_Implementation(firstname, parameters_string);
+                        this.errors = im.error_handling_code_implementation();
+                    }
+                    else
+                    {
+                        this.errors[0] = "**Not a valid syntax**";
+                    }
+                }
+                else
+                {
+                    this.errors[0] = "**Please pass parameter or see help**";
+                }
+                
                 
             }
             
