@@ -54,7 +54,7 @@ namespace Write_code_to_draw
             {
                 try
                 {
-                    double passed_data = double.Parse(code_array[1]);
+                    float passed_data = float.Parse(code_array[1]);
                     Data_storing.List_of_varaiables.Add(code_array[0]);
                     Data_storing.Value_of_varaiables.Add(passed_data);
 
@@ -84,13 +84,13 @@ namespace Write_code_to_draw
                 try
                 {
                     
-                    double passed_data = double.Parse(code_array[1]);
+                    float passed_data = float.Parse(code_array[1]);
                     if (Data_storing.List_of_varaiables.Contains(code_array[0]))
                     {
                         int index = Data_storing.List_of_varaiables.IndexOf(code_array[0]);
-                        double value_of_the_variable= (double)Data_storing.Value_of_varaiables[index];
+                        float value_of_the_variable= (float)Data_storing.Value_of_varaiables[index];
 
-                        double sum_of_data = passed_data + value_of_the_variable;
+                        float sum_of_data = passed_data + value_of_the_variable;
 
                         Data_storing.Value_of_varaiables[index] = sum_of_data;
 
@@ -128,13 +128,13 @@ namespace Write_code_to_draw
                 try
                 {
 
-                    double passed_data = double.Parse(code_array[1]);
+                    float passed_data = float.Parse(code_array[1]);
                     if (Data_storing.List_of_varaiables.Contains(code_array[0]))
                     {
                         int index = Data_storing.List_of_varaiables.IndexOf(code_array[0]);
-                        double value_of_the_variable = (double)Data_storing.Value_of_varaiables[index];
+                        float value_of_the_variable = (float)Data_storing.Value_of_varaiables[index];
 
-                        double sum_of_data = value_of_the_variable/ passed_data;
+                        float sum_of_data = value_of_the_variable/ passed_data;
 
                         Data_storing.Value_of_varaiables[index] = sum_of_data;
 
@@ -171,13 +171,13 @@ namespace Write_code_to_draw
                 try
                 {
 
-                    double passed_data = double.Parse(code_array[1]);
+                    float passed_data = float.Parse(code_array[1]);
                     if (Data_storing.List_of_varaiables.Contains(code_array[0]))
                     {
                         int index = Data_storing.List_of_varaiables.IndexOf(code_array[0]);
-                        double value_of_the_variable = (double)Data_storing.Value_of_varaiables[index];
+                        float value_of_the_variable = (float)Data_storing.Value_of_varaiables[index];
 
-                        double sum_of_data = value_of_the_variable % passed_data;
+                        float sum_of_data = value_of_the_variable % passed_data;
 
                         Data_storing.Value_of_varaiables[index] = sum_of_data;
 
@@ -215,13 +215,13 @@ namespace Write_code_to_draw
                 try
                 {
 
-                    double passed_data = double.Parse(code_array[1]);
+                    float passed_data = float.Parse(code_array[1]);
                     if (Data_storing.List_of_varaiables.Contains(code_array[0]))
                     {
                         int index = Data_storing.List_of_varaiables.IndexOf(code_array[0]);
-                        double value_of_the_variable = (double)Data_storing.Value_of_varaiables[index];
+                        float value_of_the_variable = (float)Data_storing.Value_of_varaiables[index];
 
-                        double sum_of_data = passed_data * value_of_the_variable;
+                        float sum_of_data = passed_data * value_of_the_variable;
 
                         Data_storing.Value_of_varaiables[index] = sum_of_data;
 
@@ -259,13 +259,13 @@ namespace Write_code_to_draw
                 try
                 {
 
-                    double passed_data = double.Parse(code_array[1]);
+                    float passed_data = float.Parse(code_array[1]);
                     if (Data_storing.List_of_varaiables.Contains(code_array[0]))
                     {
                         int index = Data_storing.List_of_varaiables.IndexOf(code_array[0]);
-                        double value_of_the_variable = (double)Data_storing.Value_of_varaiables[index];
+                        float value_of_the_variable = (float)Data_storing.Value_of_varaiables[index];
 
-                        double sum_of_data =value_of_the_variable-passed_data;
+                        float sum_of_data =value_of_the_variable-passed_data;
 
                         Data_storing.Value_of_varaiables[index] = sum_of_data;
 

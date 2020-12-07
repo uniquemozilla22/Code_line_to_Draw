@@ -25,12 +25,11 @@ namespace Write_code_to_draw
         /// </summary>
         /// <param name="param"></param>the integer array of the parameters given by the user to be constructed in the application
         /// <param name="Default_Pen"></param> Pen for drawing the shape if the fill is off
-        public void GetValue(int[] param, Pen Default_Pen)
+        public void GetValue(float[] param, Pen Default_Pen)
         {
-            this.side1 = param[0];
-            this.side2 = param[1];
-
-            this.side3 = param[2];
+            this.side1 = (int)param[0];
+            this.side2 = (int)param[1];
+            this.side3 = (int)param[2];
 
 
             this.pen = Default_Pen;
@@ -42,13 +41,12 @@ namespace Write_code_to_draw
         /// </summary>
         /// <param name="param"></param>the integer array of the parameters given by the user to be constructed in the application
         /// <param name="Default_Brush"></param>  Brush to fill inside the shape if the fill is on
-        public void GetValue(int[] param, SolidBrush Default_Brush)
+        public void GetValue(float[] param, SolidBrush Default_Brush)
         {
 
-            this.side1 = param[0];
-            this.side2 = param[1];
-
-            this.side3 = param[2];
+            this.side1 = (int)param[0];
+            this.side2 = (int)param[1];
+            this.side3 = (int)param[2];
             this.brush = Default_Brush;
         }
 

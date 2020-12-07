@@ -116,7 +116,7 @@ namespace Write_code_to_draw
                 }
                 else
                 {
-                    errors[0] = "**Pass a legnth and a breadth**";
+                    errors[0] = "**Pass a length and a breadth**";
                 }
 
             }
@@ -140,22 +140,42 @@ namespace Write_code_to_draw
         {
             Shape_decider shape_type = new Shape_decider();
 
-            int[] parameters_int = new int[length];
+            float[] parameters_float = new float[length];
             for (int i = 0; i < length; i++)
             {
-                 parameters_int[i] = int.Parse(para[i]);
+
+                if (Data_storing.List_of_varaiables.Contains(para[i]))
+                {
+                    int index = Data_storing.List_of_varaiables.IndexOf(para[i]);
+                    parameters_float[i] = (float)Data_storing.Value_of_varaiables[index];
+
+                }
+                else
+                {
+                    try
+                    {
+                        parameters_float[i] = float.Parse(para[i]);
+                    }
+                    catch (FormatException fe)
+                    {
+                        this.errors[0] = "Please pass some parameters to the command";
+
+
+                    }
+                }
+                
 
             }
 
             Shapes sh = shape_type.GetShapes(shape);
             if (fill)
             {
-                sh.GetValue(parameters_int, Default_Brush);
+                sh.GetValue(parameters_float, Default_Brush);
 
             }
             else
             {
-                sh.GetValue(parameters_int, Default_Pen);
+                sh.GetValue(parameters_float, Default_Pen);
             }
             sh.Draw(graphics, Default_initial_positionx,Default_initial_positiony, fill);
 
