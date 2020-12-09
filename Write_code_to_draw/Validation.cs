@@ -61,7 +61,7 @@ namespace Write_code_to_draw
         public void Parameters_Implementation(string code)
         {
 
-            if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*'))
+            if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*') || code.Contains('<') || code.Contains('>'))
             {
                 string check_conditional = code.Trim();
 
