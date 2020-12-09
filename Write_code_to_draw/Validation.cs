@@ -15,7 +15,6 @@ namespace Write_code_to_draw
     public class Validation
     {
         string[] errors = { "", "" };
-        string[] code = null;
 
 
         /// <summary>
@@ -34,24 +33,21 @@ namespace Write_code_to_draw
             }
             else
             {
-                if(code.Contains('\n')==true)
+                if (code.Contains(';'))
                 {
-                    string[] multiline = code.Split('\n');
+                    string[] multiline = code.Split(';');
+                    Data_storing.code_lines.AddRange(multiline);                   
                     foreach(string line in multiline)
                     {
-
-                        code = line.ToLower().Trim();
-
-                        this.code = code.Split(' ');
-                        Parameters_Implementation(code);
+                        string code_line = line.ToLower().Trim();
+                       
+                        Parameters_Implementation(code_line);
                     }
                 }
                 else
                 {
 
                     code = code.ToLower().Trim();
-
-                    this.code = code.Split(' ');
                     Parameters_Implementation(code);
                 }
                               
@@ -63,31 +59,42 @@ namespace Write_code_to_draw
         /// Method that is used in the class for executing the parameters and passing them to implement in the code.
         /// </summary>
         public void Parameters_Implementation(string code)
-        {       
-           
-            
+        {
+
             if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*'))
             {
-                Variables vr = new Variables(code);
-                this.errors = vr.error_handling_variables();
-            }
-            else
-            {
-                if(this.code.Length!=1)
-                {
-                    string firstname = this.code[0];
+                string check_conditional = code.Trim();
 
-                    string[] parameters_string = this.code[1].Split(',');
+                if(check_conditional.Contains("if "))
+                {
+                    Conditional_execution ce = new Conditional_execution(code);
+                    this.errors = ce.error_handling_Conditional_execution();
+                }
+                else
+                {
+                    Variables vr = new Variables(code);
+                    this.errors = vr.error_handling_variables();
+                }
+            }
+           
+            else {
+                string[] code_arr = code.Split(' ');
+
+                if (code_arr.Length!=1)
+                {
+                    string firstname = code_arr[0];
+
+                    string[] parameters_string = code_arr[1].Split(',');
 
                     if (parameters_string.Length <= 0 || parameters_string.Length >= 4)
                     {
                         this.errors[0] = "**Parameters not passed correctly**";
                     }
-                    else if (!(this.code.Length == 1))
+                    else if (!(code_arr.Length == 1))
                     {
-                        for (int i = 0; i < this.code.Length; i++)
+                        for (int i = 0; i < code_arr.Length; i++)
                         {
-                            this.code[i] = this.code[i].Trim();
+                            code_arr[i] = code_arr[i].Trim();
                         }
 
                         Shape_Implementation im = new Shape_Implementation(firstname, parameters_string);
@@ -98,7 +105,7 @@ namespace Write_code_to_draw
                         this.errors[0] = "**Not a valid syntax**";
                     }
                 }
-                else
+                else if (code_arr[0]!="")
                 {
                     this.errors[0] = "**Please pass parameter or see help**";
                 }

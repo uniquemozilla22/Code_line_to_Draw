@@ -64,6 +64,7 @@ namespace Write_code_to_draw
                     this.error[0] = "**Please pass a number to the variable**";
                 }
                 Data_storing.logging_theList();
+
             }
             else
             {
