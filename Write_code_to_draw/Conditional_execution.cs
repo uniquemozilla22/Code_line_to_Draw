@@ -62,8 +62,6 @@ namespace Write_code_to_draw
                                 errors = vr.error_handling_validation();
                             }
                         }
-
-
                     }
                     else
                     {

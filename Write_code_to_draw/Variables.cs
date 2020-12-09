@@ -55,9 +55,19 @@ namespace Write_code_to_draw
                 try
                 {
                     float passed_data = float.Parse(code_array[1]);
-                    Data_storing.List_of_varaiables.Add(code_array[0]);
-                    Data_storing.Value_of_varaiables.Add(passed_data);
 
+                    if (Data_storing.List_of_varaiables.Contains(code_array[0]))
+                    {
+
+                        int index = Data_storing.List_of_varaiables.IndexOf(code_array[0]);
+                        Data_storing.Value_of_varaiables[index] = passed_data;
+                    }
+                    else
+                    {
+                        Data_storing.List_of_varaiables.Add(code_array[0]);
+                        Data_storing.Value_of_varaiables.Add(passed_data);
+
+                    }
                 }
                 catch (Exception)
                 {
