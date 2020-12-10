@@ -33,7 +33,6 @@ namespace Write_code_to_draw
         {
 
             string x = "";
-            string y = "";
             for (int i = 0; i < code_lines.Count; i++)
             {
                 x += code_lines[i];
@@ -47,3 +46,4 @@ namespace Write_code_to_draw
 
     }
 }
+

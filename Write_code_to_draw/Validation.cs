@@ -70,6 +70,10 @@ namespace Write_code_to_draw
                     Conditional_execution ce = new Conditional_execution(code);
                     this.errors = ce.error_handling_Conditional_execution();
                 }
+                else if(check_conditional.Contains("loop for "))
+                {
+
+                }
                 else
                 {
                     Variables vr = new Variables(code);
