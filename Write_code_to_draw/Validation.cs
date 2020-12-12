@@ -47,7 +47,7 @@ namespace Write_code_to_draw
                 {
 
                     code = code.ToLower().Trim();
-                    Parameters_Implementation(code);
+                    this.Parameters_Implementation(code);
                 }
                               
 
@@ -63,16 +63,14 @@ namespace Write_code_to_draw
            
             if (code.Contains("loop "))
             {
-                MessageBox.Show("I am on loop");
-
                 MessageBox.Show(code);
                 Loop_execution le = new Loop_execution(code);
                 this.errors = le.error_handling_loop_execution();
             }
             else if((code.Contains("method ")) || (code.Contains("(")&& code.Contains(")")))
             {
-                MessageBox.Show("I am on the method");
                 Method_Execution me = new Method_Execution(code);
+                this.errors = me.error_handling_method_executiion();
             }
             else if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*') || code.Contains('<') || code.Contains('>'))
             {
@@ -80,15 +78,12 @@ namespace Write_code_to_draw
 
                 if(check_conditional.Contains("if "))
                 {
-                    MessageBox.Show("I am on if");
                     Conditional_execution ce = new Conditional_execution(code);
                     this.errors = ce.error_handling_Conditional_execution();
                 }
                
                 else
                 {
-                    MessageBox.Show("I am on var");
-
                     Variables vr = new Variables(code);
                     this.errors = vr.error_handling_variables();
                 }

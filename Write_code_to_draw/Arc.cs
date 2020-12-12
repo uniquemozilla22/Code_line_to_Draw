@@ -29,7 +29,7 @@ namespace Write_code_to_draw
         }
 
         /// <summary>
-        /// Getts the value and sets the parameters of the Circle shape
+        /// Getts the value and sets the parameters of the Arc shape
         /// </summary>
         /// <param name="param"></param> the integer array of the parameters given by the user to be constructed in the application
         /// <param name="Default_Pen"></param> Pen for drawing the shape if the fill is off

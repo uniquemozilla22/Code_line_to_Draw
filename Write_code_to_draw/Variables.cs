@@ -18,6 +18,7 @@ namespace Write_code_to_draw
            if(code.Contains("="))
             {
                 this.Storing_the_variables();
+                this.error[0] = "Varaiable executed";
             }
             else if (code.Contains("+"))
             {

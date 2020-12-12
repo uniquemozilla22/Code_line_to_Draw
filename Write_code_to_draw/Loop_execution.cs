@@ -34,7 +34,7 @@ namespace Write_code_to_draw
                 }
                 else
                 {
-                    errors[0] = "**Invalid varable for the loop**";
+                    errors[0] = "**Invalid variable for the loop**";
                 }
 
 
