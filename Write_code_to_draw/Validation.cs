@@ -36,7 +36,6 @@ namespace Write_code_to_draw
                 if (code.Contains(';'))
                 {
                     string[] multiline = code.Split(';');
-                    Data_storing.code_lines.AddRange(multiline);                   
                     foreach(string line in multiline)
                     {
                         string code_line = line.ToLower().Trim();
@@ -60,27 +59,34 @@ namespace Write_code_to_draw
         /// </summary>
         public void Parameters_Implementation(string code)
         {
+            if (code.Contains("loop "))
+            {
+                MessageBox.Show("I am on loop");
 
-            if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*') || code.Contains('<') || code.Contains('>'))
+                MessageBox.Show(code);
+                Loop_execution le = new Loop_execution(code);
+                this.errors = le.error_handling_loop_execution();
+            }
+            else if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*') || code.Contains('<') || code.Contains('>'))
             {
                 string check_conditional = code.Trim();
 
                 if(check_conditional.Contains("if "))
                 {
+                    MessageBox.Show("I am on if");
                     Conditional_execution ce = new Conditional_execution(code);
                     this.errors = ce.error_handling_Conditional_execution();
                 }
-                else if(check_conditional.Contains("loop for "))
-                {
-
-                }
+               
                 else
                 {
+                    MessageBox.Show("I am on var");
+
                     Variables vr = new Variables(code);
                     this.errors = vr.error_handling_variables();
                 }
             }
-           
+
             else {
                 string[] code_arr = code.Split(' ');
 

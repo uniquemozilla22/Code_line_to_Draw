@@ -10,9 +10,11 @@ namespace Write_code_to_draw
 {
     public class Data_storing
     {
-        public static ArrayList code_lines = new ArrayList();
         public static ArrayList List_of_varaiables = new ArrayList();
         public static ArrayList Value_of_varaiables = new ArrayList();
+        public static ArrayList names_of_method = new ArrayList();
+        public static ArrayList Method_code_line = new ArrayList();
+        public static ArrayList Method_parameters = new ArrayList();
 
 
         public static void logging_theList()
@@ -28,19 +30,21 @@ namespace Write_code_to_draw
             MessageBox.Show(x+"="+y);
 
         }
-
-        public static void logging_theLines()
+        public static void logging_themethod()
         {
-
             string x = "";
-            for (int i = 0; i < code_lines.Count; i++)
+            string y = "";
+            for (int i = 0; i < List_of_varaiables.Count; i++)
             {
-                x += code_lines[i];
-                MessageBox.Show(x + "=" + code_lines.Count);
-
+                x += List_of_varaiables[i];
+                y += Value_of_varaiables[i];
 
             }
+            MessageBox.Show(x + "=" + y);
+
         }
+
+
 
 
 
