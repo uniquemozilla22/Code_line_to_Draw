@@ -41,6 +41,7 @@ namespace Write_code_to_draw
         {
             this.textBox1.Text = "";
             this.textBox2.Text = "";
+            this.textBox3.Text = "";
             this.label3.Text = "";
             this.label16.Text = "";
         }
@@ -84,6 +85,11 @@ namespace Write_code_to_draw
                 string[] errors = valid.error_handling_validation();
                 this.label3.Text = errors[0];
                 this.label16.Text = errors[1];
+
+                for (int i=0; i<Data_storing.error_List.Count; i++)
+                {
+                    this.textBox3.Text += Data_storing.error_List[i] + "\n";
+                }
 
             }
             else if (comm == "clear")

@@ -302,6 +302,8 @@ namespace Write_code_to_draw
         }
         public string[] error_handling_variables()
         {
+            Data_storing.error_List.AddRange(this.error);
+
             return this.error;
         }
     }

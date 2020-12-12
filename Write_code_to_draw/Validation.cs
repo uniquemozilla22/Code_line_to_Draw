@@ -59,6 +59,8 @@ namespace Write_code_to_draw
         /// </summary>
         public void Parameters_Implementation(string code)
         {
+
+           
             if (code.Contains("loop "))
             {
                 MessageBox.Show("I am on loop");
@@ -66,6 +68,11 @@ namespace Write_code_to_draw
                 MessageBox.Show(code);
                 Loop_execution le = new Loop_execution(code);
                 this.errors = le.error_handling_loop_execution();
+            }
+            else if((code.Contains("method ")) || (code.Contains("(")&& code.Contains(")")))
+            {
+                MessageBox.Show("I am on the method");
+                Method_Execution me = new Method_Execution(code);
             }
             else if (code.Contains('=') || code.Contains('+') || code.Contains('%') || code.Contains('-') || code.Contains('/') || code.Contains('*') || code.Contains('<') || code.Contains('>'))
             {
@@ -96,16 +103,18 @@ namespace Write_code_to_draw
 
                     string[] parameters_string = code_arr[1].Split(',');
 
-                    if (parameters_string.Length <= 0 || parameters_string.Length >= 4)
+
+                    if (parameters_string.Length <= 0)
                     {
                         this.errors[0] = "**Parameters not passed correctly**";
                     }
                     else if (!(code_arr.Length == 1))
                     {
-                        for (int i = 0; i < code_arr.Length; i++)
+                        for (int x = 0; x < code_arr.Length; x++)
                         {
-                            code_arr[i] = code_arr[i].Trim();
+                            code_arr[x] = code_arr[x].Trim();
                         }
+                        MessageBox.Show("Hey it is me");
 
                         Shape_Implementation im = new Shape_Implementation(firstname, parameters_string);
                         this.errors = im.error_handling_code_implementation();
@@ -132,6 +141,7 @@ namespace Write_code_to_draw
         /// <returns></returns> array of errors for displaying in the application
         public string[] error_handling_validation()
         {
+            Data_storing.error_List.AddRange(this.errors);
             return this.errors;
         }
     }

@@ -51,6 +51,7 @@
     <Compile Include="Conditional_execution.cs" />
     <Compile Include="Data_storing.cs" />
     <Compile Include="Method_Execution.cs" />
+    <Compile Include="Polygon.cs" />
     <Compile Include="Shape_Implementation.cs" />
     <Compile Include="Help.cs">
       <SubType>Form</SubType>

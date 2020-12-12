@@ -120,6 +120,18 @@ namespace Write_code_to_draw
                 }
 
             }
+            else if (firstname == "polygon")
+            {
+                if (parameters_string.Length >= 4)
+                {
+                    shape_changer(firstname, parameters_string.Length, parameters_string);
+                }
+                else
+                {
+                    errors[0] = "**Pass a length and a breadth**";
+                }
+
+            }
 
 
             else
@@ -293,6 +305,7 @@ namespace Write_code_to_draw
 
         public string[] error_handling_code_implementation()
         {
+            Data_storing.error_List.AddRange(this.errors);
             return this.errors;
         }
     }

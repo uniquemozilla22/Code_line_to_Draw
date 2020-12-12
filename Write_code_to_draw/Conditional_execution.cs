@@ -211,6 +211,8 @@ namespace Write_code_to_draw
 
         public string[] error_handling_Conditional_execution()
         {
+            Data_storing.error_List.AddRange(this.errors);
+
             return this.errors;
         }
     }

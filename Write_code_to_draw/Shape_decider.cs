@@ -31,6 +31,10 @@ namespace Write_code_to_draw
             {
                 return new Rectangle();
             }
+            else if (shape_type == "polygon")
+            {
+                return new Polygon();
+            }
             return null;
         }
     }
