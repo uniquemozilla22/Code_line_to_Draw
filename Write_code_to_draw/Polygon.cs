@@ -15,7 +15,7 @@ namespace Write_code_to_draw
 
 
         /// <summary>
-        /// Getts the value and sets the parameters of the triangle shape
+        /// Getts the value and sets the parameters of the Polygon shape
         /// 
         /// </summary>
         /// <param name="param"></param>the integer array of the parameters given by the user to be constructed in the application
@@ -34,7 +34,7 @@ namespace Write_code_to_draw
         }
 
         /// <summary>
-        /// Getts the value and sets the parameters of the Triangle shape
+        /// Getts the value and sets the parameters of the Polygon shape
         /// 
         /// </summary>
         /// <param name="param"></param>the integer array of the parameters given by the user to be constructed in the application

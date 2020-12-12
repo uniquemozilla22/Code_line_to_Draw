@@ -94,6 +94,19 @@ namespace Write_code_to_draw
                 }
 
             }
+            else if (firstname == "drawarc")
+            {
+                if (parameters_string.Length == 4)
+                {
+                    shape_changer(firstname, parameters_string.Length, parameters_string);
+
+                }
+                else
+                {
+                    errors[0] = "**Pass width,height,start angle,sweep angle**";
+                }
+
+            }
             else if (firstname == "triangle")
             {
                 if (parameters_string.Length == 3)
@@ -180,7 +193,7 @@ namespace Write_code_to_draw
                     }
                     catch (FormatException fe)
                     {
-                        this.errors[0] = "Please pass some parameters to the command";
+                        this.errors[0] = "Please pass some valid parameters to the command";
 
 
                     }

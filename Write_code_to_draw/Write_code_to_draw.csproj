@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arc.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Loop_execution.cs" />
     <Compile Include="Conditional_execution.cs" />

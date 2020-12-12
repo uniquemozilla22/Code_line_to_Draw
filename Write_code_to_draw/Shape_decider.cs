@@ -35,6 +35,10 @@ namespace Write_code_to_draw
             {
                 return new Polygon();
             }
+            else if (shape_type == "drawarc")
+            {
+                return new Arc();
+            }
             return null;
         }
     }
