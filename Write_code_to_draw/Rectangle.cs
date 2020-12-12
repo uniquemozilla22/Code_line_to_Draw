@@ -53,10 +53,14 @@ namespace Write_code_to_draw
         {
             if (fill)
             {
+                G.RotateTransform(Data_storing.rotating_angle);
+
                 G.FillRectangle(brush, x,y,side2,side1);
             }
             else
             {
+                G.RotateTransform(Data_storing.rotating_angle);
+
                 G.DrawRectangle(pen, x, y, side2, side1);
 
 

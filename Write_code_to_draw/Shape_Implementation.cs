@@ -128,12 +128,22 @@ namespace Write_code_to_draw
                 }
                 else
                 {
-                    errors[0] = "**Pass a length and a breadth**";
+                    errors[0] = "**Pass a 5 parameters for the sides**";
                 }
 
             }
+            else if (firstname == "rotate")
+            {
+                if (parameters_string.Length ==1)
+                {
+                    rotating_Graphics(parameters_string);
+                }
+                else
+                {
+                    errors[0] = "**Pass a rotating angle**";
+                }
 
-
+            }
             else
             {
                 this.errors[0] = "**Not a Valid Code**";
@@ -295,6 +305,20 @@ namespace Write_code_to_draw
                 this.graphics.DrawLine(Default_Pen, Default_initial_positionx, Default_initial_positiony, param1,param2);
                 errors[0] = "**Line drawn to "+parameters[0]+","+parameters[1]+"**";
 
+            }
+        }
+
+        public void rotating_Graphics(string[] para)
+        {
+            try
+            {
+               float rotating_angle = float.Parse(para[0]);
+                Data_storing.rotating_angle = rotating_angle;
+                this.errors[0] = "Rotated to " + rotating_angle + " deg";
+            }
+            catch (FormatException fe)
+            {
+                this.errors[0] = "Please pass angle in number form(degree)";
             }
         }
 

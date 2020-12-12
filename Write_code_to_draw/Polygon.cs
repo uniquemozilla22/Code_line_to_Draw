@@ -63,25 +63,27 @@ namespace Write_code_to_draw
             int initial_positionx = (int)x;
             int initial_positiony = (int)y;
             Point p1 = new Point(initial_positionx, initial_positiony);
-            Point p3 = new Point(sides[0], initial_positiony);
-            Point p5 = new Point(sides[1], sides[0]);
-            Point p6 = new Point(sides[2], sides[1]);
-            Point p7 = new Point(sides[3], sides[2]);
-            Point p2 = new Point(sides[4], sides[3]);
+            Point p3 = new Point(sides[0], sides[1]);
+            Point p5 = new Point(sides[2], sides[3]);
+            Point p6 = new Point(sides[4], initial_positionx);
 
 
 
-
-            Point[] points= { p1, p3,p5,p6,p7,p2};
+            Point[] points= { p1, p3,p5,p6};
             
 
             if (fill)
             {
+                G.RotateTransform(Data_storing.rotating_angle);
                 G.FillPolygon(brush, points);
+
             }
             else
             {
+                G.RotateTransform(Data_storing.rotating_angle);
                 G.DrawPolygon(pen, points);
+
+
 
             }
         }

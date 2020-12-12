@@ -25,34 +25,8 @@ namespace Write_code_to_draw
         //for errorhandling
         public static ArrayList error_List = new ArrayList();
 
-
-        public static void logging_theList()
-        {
-            string x = "";
-            string y = "";
-            for(int i =0; i<List_of_varaiables.Count;i++)
-            {
-                x += List_of_varaiables[i];
-                y += Value_of_varaiables[i];
-
-            }
-            MessageBox.Show(x+"="+y);
-
-        }
-        public static void logging_themethod()
-        {
-            string x = "";
-            string y = "";
-            for (int i = 0; i < List_of_varaiables.Count; i++)
-            {
-                x += List_of_varaiables[i];
-                y += Value_of_varaiables[i];
-
-            }
-            MessageBox.Show(x + "=" + y);
-
-        }
-
+        //for rotating the canvas
+        public static float rotating_angle = 0;
 
 
 

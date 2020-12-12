@@ -73,7 +73,6 @@ namespace Write_code_to_draw
                 {
                     this.error[0] = "**Please pass a number to the variable**";
                 }
-                Data_storing.logging_theList();
 
             }
             else
@@ -118,7 +117,6 @@ namespace Write_code_to_draw
                 {
                     this.error[0] = "**Please pass a adding number to the variable**";
                 }
-                Data_storing.logging_theList();
             }
             else
             {
@@ -162,7 +160,6 @@ namespace Write_code_to_draw
                 {
                     this.error[0] = "**Please pass a dividing number to the variable**";
                 }
-                Data_storing.logging_theList();
             }
             else
             {
@@ -205,7 +202,6 @@ namespace Write_code_to_draw
                 {
                     this.error[0] = "**Please pass a Moduling number to the variable**";
                 }
-                Data_storing.logging_theList();
             }
             else
             {
@@ -249,7 +245,6 @@ namespace Write_code_to_draw
                 {
                     this.error[0] = "**Please pass a multypling number to the variable**";
                 }
-                Data_storing.logging_theList();
             }
             else
             {
@@ -293,7 +288,6 @@ namespace Write_code_to_draw
                 {
                     this.error[0] = "**Please pass a subtracting number to the variable**";
                 }
-                Data_storing.logging_theList();
             }
             else
             {

@@ -56,12 +56,16 @@ namespace Write_code_to_draw
         {
             if(!fill)
             {
+                G.RotateTransform(Data_storing.rotating_angle);
+
                 G.DrawEllipse(pen, x, y, radius, radius);
                 
                
             }
             else
             {
+                G.RotateTransform(Data_storing.rotating_angle);
+
                 G.FillEllipse(brush, x, y, radius, radius);
 
             }

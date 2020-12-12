@@ -70,12 +70,14 @@ namespace Write_code_to_draw
 
             if (fill)
             {
+                G.RotateTransform(Data_storing.rotating_angle);
+
                 G.FillPolygon(brush, points);
             }
             else
             {
+                G.RotateTransform(Data_storing.rotating_angle);
                 G.DrawPolygon(pen, points);
-
             }
         }
 

@@ -114,7 +114,6 @@ namespace Write_code_to_draw
                         {
                             code_arr[x] = code_arr[x].Trim();
                         }
-                        MessageBox.Show("Hey it is me");
 
                         Shape_Implementation im = new Shape_Implementation(firstname, parameters_string);
                         this.errors = im.error_handling_code_implementation();
