@@ -21,6 +21,8 @@ namespace Write_code_to_draw
         public static ArrayList length_of_method = new ArrayList();
         public static ArrayList Method_code_line = new ArrayList();
         public static ArrayList Method_parameters = new ArrayList();
+        public static ArrayList method_parameters_value = new ArrayList();
+        public static ArrayList index_of_parameter = new ArrayList();
 
         //for errorhandling
         public static ArrayList error_List = new ArrayList();

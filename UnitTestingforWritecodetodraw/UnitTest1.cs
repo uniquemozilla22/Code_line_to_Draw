@@ -41,7 +41,50 @@ namespace Write_code_to_draw.UnitTests
 
 
         }
-       
+
+        [TestMethod]
+
+        public void Method_Testing()
+        {
+
+            //passing the non setted method to the application
+            string given_input = "name()";
+
+            Method_Execution pc = new Method_Execution(given_input);
+            string[] response = pc.error_handling_method_executiion();
+
+
+            string expected_output = "**There is no such method set **";
+
+
+            Assert.AreEqual(expected_output, response[0]);
+
+
+
+
+        }
+
+        [TestMethod]
+
+        public void loop_Testing()
+        {
+
+            //passing the non setted method to the application
+            string given_input = "loop for x";
+
+            Loop_execution pc = new Loop_execution(given_input);
+            string[] response = pc.error_handling_loop_execution();
+
+
+            string expected_output = "**Invalid variable for the loop**";
+
+
+            Assert.AreEqual(expected_output, response[0]);
+
+
+
+
+        }
 
 
     }
