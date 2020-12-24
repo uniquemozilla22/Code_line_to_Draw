@@ -39,7 +39,6 @@ namespace Write_code_to_draw
                     foreach(string line in multiline)
                     {
                         string code_line = line.ToLower().Trim();
-                       
                         Parameters_Implementation(code_line);
                     }
                 }

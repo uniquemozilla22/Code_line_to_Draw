@@ -41,6 +41,8 @@ namespace Write_code_to_draw
                     Data_storing.index_of_parameter.Add(Data_storing.List_of_varaiables.IndexOf(joined_parameter));
 
                 }
+                this.errors[0] = "Method executed : " + name_of_method;
+
             }
             else if( code.Contains("(") && code.Contains(")"))
             {
